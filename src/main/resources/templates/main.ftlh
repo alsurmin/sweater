@@ -5,6 +5,11 @@
     <div>
         <@l.logout />
     </div>
+    <#if isAdmin>
+    <div>
+        <a href="/user">User list</a>
+    </div>
+    </#if>
     <div>
         <form method="post">
             <input type="text" name="text" placeholder="Введите сообщение" />
