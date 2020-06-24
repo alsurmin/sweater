@@ -1,9 +1,7 @@
 package com.example.domain;
 
 import lombok.Data;
-import lombok.Getter;
 import lombok.NoArgsConstructor;
-import lombok.Setter;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
@@ -26,8 +24,6 @@ public class User implements UserDetails {
     @NotBlank (message = "Password cannot be empty")
     private String password;
 
-    @Transient
-    private String password2;
     private boolean active;
 
     @Email (message = "Email is not correct")
