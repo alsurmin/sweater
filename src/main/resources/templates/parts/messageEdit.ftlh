@@ -15,7 +15,7 @@
             </div>
             <div class="form-group">
                 <input type="text" class="form-control" name="tag" placeholder="Tag"
-                       value="<#if message??>${message.tag}</#if>">
+                       value="<#if message??>${message.tag}</#if>" />
                 <#if tagError??>
                     <div class="invalid-feedback">
                         ${tagError}
@@ -29,7 +29,7 @@
                 </div>
             </div>
             <input type="hidden" name="_csrf" value="${_csrf.token}" />
-            <input type="hidden" name="id" value="<#if message??>${message.id}</#if>">
+            <input type="hidden" name="id" value="<#if message??>${message.id}</#if>" />
             <div class="form-group">
                 <button type="submit" class="btn btn-primary">Save message</button>
             </div>

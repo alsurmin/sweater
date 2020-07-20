@@ -55,7 +55,7 @@
             </div>
 
             <#--google-captcha-->
-            <input type="hidden" name="g-recaptcha-response" id="g-recaptcha-response">
+            <input type="hidden" name="g-recaptcha-response" id="g-recaptcha-response" />
             <#if captchaError??>
             <div class="col-sm-6">
                 <div class="alert alert-fanger" role="alert">

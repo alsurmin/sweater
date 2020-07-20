@@ -67,12 +67,15 @@ public class MainController {
             model.addAttribute("message", message);
         } else {
             saveFile(message, file);
-            model.addAttribute("message", message);
+
+            model.addAttribute("message", null);
+
             messageRepo.save(message);
         }
 
         Iterable<Message> messages = messageRepo.findAll();
-        model.addAttribute("messages", null);
+
+        model.addAttribute("messages", messages);
 
         return "main";
     }
