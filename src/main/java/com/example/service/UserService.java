@@ -39,10 +39,9 @@ public class UserService implements UserDetailsService {
     }
 
     public boolean addUser(User user) {
-        boolean isUserExists = false;
         User userFromDb = userRepo.findByUsername(user.getUsername());
         if (userFromDb != null) {
-            isUserExists = true;
+            return false;
         }
         user.setActive(true);
         user.setActivationCode(UUID.randomUUID().toString());
@@ -53,7 +52,7 @@ public class UserService implements UserDetailsService {
 
         sendMessage(user);
 
-        return isUserExists;
+        return true;
     }
 
     private void sendMessage(User user) {
@@ -118,7 +117,7 @@ public class UserService implements UserDetailsService {
         }
 
         if (!StringUtils.isEmpty(password)){
-            user.setPassword(passwordEncoder.encode(password));;
+            user.setPassword(passwordEncoder.encode(password));
         }
 
         userRepo.save(user);
